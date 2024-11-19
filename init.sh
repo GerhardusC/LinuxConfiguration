@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install build-essential libsqlite3-dev libssl-dev pkg-config;
+sudo apt install build-essential libsqlite3-dev libssl-dev pkg-config sqlite3;
 
 sudo apt install mosquitto mosquitto-clients;
 
