@@ -19,3 +19,5 @@ nvm install 22;
 node -v;
 
 npm -v;
+
+cp ./.bashrc ~/.bashrc;
