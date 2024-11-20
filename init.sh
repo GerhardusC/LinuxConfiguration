@@ -1,8 +1,13 @@
 #!/bin/bash
 
-sudo apt install build-essential libsqlite3-dev libssl-dev pkg-config sqlite3;
+# Build essentials for rust development
+sudo apt install -y build-essential libsqlite3-dev libssl-dev pkg-config sqlite3;
 
-sudo apt install mosquitto mosquitto-clients;
+# Utilities
+sudo apt install -y tree;
+
+# Extra project stuff
+sudo apt install -y mosquitto mosquitto-clients;
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh;
 
