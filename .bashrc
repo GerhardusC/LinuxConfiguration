@@ -98,7 +98,7 @@ alias l='ls -CF'
 
 # Personal aliases
 alias off='poweroff'
-alias up='sudo apt update && sudo apt upgrade && flatpak update'
+alias up='sudo apt update && sudo apt upgrade && sudo flatpak update'
 alias gl='git log --graph --abbrev-commit --decorate --format=format:'\''%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'\'' --all'
 
 # Add an "alert" alias for long running commands.  Use like so:
