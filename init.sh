@@ -4,7 +4,7 @@
 sudo apt install -y build-essential libsqlite3-dev libssl-dev pkg-config sqlite3;
 
 # Utilities
-sudo apt install -y tree;
+sudo apt install -y tree tmux vim;
 
 # Extra project stuff
 sudo apt install -y mosquitto mosquitto-clients;
