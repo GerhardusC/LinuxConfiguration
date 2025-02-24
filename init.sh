@@ -26,3 +26,4 @@ node -v;
 npm -v;
 
 cp ./.bashrc ~/.bashrc;
+cp ./.tmux.conf ~/.tmux.conf;
