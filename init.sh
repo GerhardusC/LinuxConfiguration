@@ -39,6 +39,9 @@ cd ~/esp/esp-idf
 
 . $HOME/esp/esp-idf/export.sh
 
+sudo usermod -aG dialout $USER
+newgrp dialout
+
 
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
