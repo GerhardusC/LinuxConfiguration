@@ -127,9 +127,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH=$PATH:$HOME/.local/bin:/opt/nvim-linux64/bin:$HOME/Programs/zig
+export PATH=$PATH:$HOME/.local/bin:/opt/nvim-linux64/bin:/opt/nvim-linux-x86_64/bin:$HOME/Programs/zig
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-. "$HOME/.cargo/env"
+
