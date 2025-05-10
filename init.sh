@@ -34,7 +34,9 @@ sudo apt-get install -y git wget flex bison gperf python3 python3-pip python3-ve
 
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 rm -rf /opt/nvim
-tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+
+git clone https://github.com/GerhardusC/neovim-config $HOME/.config/nvim
 
 mkdir -p ~/esp
 cd ~/esp
