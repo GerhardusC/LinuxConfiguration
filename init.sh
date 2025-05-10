@@ -38,6 +38,9 @@ sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
 
 git clone https://github.com/GerhardusC/neovim-config $HOME/.config/nvim
 
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 30
+gsettings set org.gnome.desktop.peripherals.keyboard delay 250
+
 mkdir -p ~/esp
 cd ~/esp
 git clone -b v5.4.1 --recursive https://github.com/espressif/esp-idf.git
