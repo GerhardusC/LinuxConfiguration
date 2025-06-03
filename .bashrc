@@ -138,11 +138,13 @@ function _update_ps1() {
     #set "?"
 }
 
+GOPATH=$HOME/go
+
 if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
-export PATH=$PATH:$HOME/.local/bin:/opt/nvim-linux-x86_64/bin:/usr/local/go/bin
+export PATH=$PATH:$HOME/.local/bin:/opt/nvim-linux-x86_64/bin:/usr/local/go/bin:$GOPATH/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
