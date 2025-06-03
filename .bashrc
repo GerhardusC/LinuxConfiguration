@@ -127,9 +127,26 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH=$PATH:$HOME/.local/bin:/opt/nvim-linux64/bin:/opt/nvim-linux-x86_64/bin:$HOME/Programs/zig
+function _update_ps1() {
+    PS1="$($GOPATH/bin/powerline-go -error $? -jobs $(jobs -p | wc -l))"
+
+    # Uncomment the following line to automatically clear errors after showing
+    # them once. This not only clears the error for powerline-go, but also for
+    # everything else you run in that shell. Don't enable this if you're not
+    # sure this is what you want.
+
+    #set "?"
+}
+
+if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
+
+export PATH=$PATH:$HOME/.local/bin:/opt/nvim-linux-x86_64/bin:/usr/local/go/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
+. "$HOME/.cargo/env"
+source ~/.bash_completion/alacritty
