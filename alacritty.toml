@@ -1,0 +1,10 @@
+[window]
+startup_mode = "Maximized"
+decorations = "None"
+
+[font]
+normal = { family = "Mononoki Nerd Font", style = "Regular" }
+size = 12.5
+
+[terminal.shell]
+program = "tmux"
