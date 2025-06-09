@@ -58,15 +58,6 @@ if [ -n "$force_color_prompt" ]; then
   fi
 fi
 
-# Default PS1 variable.
-# if [ "$color_prompt" = yes ]; then
-#     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-# else
-#     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-# fi
-
-export PS1='\w > '
-
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
@@ -92,6 +83,8 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+export SYSTEMD_EDITOR=vim
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -103,9 +96,6 @@ alias up='sudo apt update && sudo apt upgrade && sudo flatpak update'
 alias gl='git log --graph --abbrev-commit --decorate --format=format:'\''%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'\'' --all'
 
 alias python='python3'
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -128,7 +118,7 @@ if ! shopt -oq posix; then
 fi
 
 function _update_ps1() {
-    PS1="$($GOPATH/bin/powerline-go -error $? -jobs $(jobs -p | wc -l))"
+    PS1="$($GOPATH/bin/powerline-go -newline -condensed -hostname-only-if-ssh -error $? -jobs $(jobs -p | wc -l))"
 
     # Uncomment the following line to automatically clear errors after showing
     # them once. This not only clears the error for powerline-go, but also for
