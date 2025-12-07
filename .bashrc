@@ -92,7 +92,7 @@ alias l='ls -CF'
 
 # Personal aliases
 alias off='poweroff'
-alias up='sudo apt update && sudo apt upgrade && sudo flatpak update'
+alias up='sudo apt update && sudo apt upgrade && snap refresh'
 alias gl='git log --graph --abbrev-commit --decorate --format=format:'\''%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'\'' --all'
 
 alias python='python3'
@@ -135,10 +135,6 @@ if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
 fi
 
 export PATH=$PATH:$HOME/.local/bin:/opt/nvim-linux-x86_64/bin:/usr/local/go/bin:$GOPATH/bin
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 . "$HOME/.cargo/env"
 source ~/.bash_completion/alacritty
